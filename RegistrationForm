@@ -12,10 +12,10 @@ class RegistrationForm extends Component {
         isFormSubmitted: false,
     }
 
-    onBlurLastName = () => {
-        const isValiidLastName = this.isValiidLastName()
+    onBlurFirstName = () => {
+        const isValidFirstName = this.validateFirstName(); 
 
-        this.setState({showLastNameError: !isValiidLastName})
+        this.setState({ showFirstNameError: !isValidFirstName });
     }
 
     onChangeLastName = event => {
@@ -51,11 +51,12 @@ class RegistrationForm extends Component {
         )
     }
 
-    onBlurFirstName = () => {
-        const isValiidFirstName = this.isValiidFirstName()
+    onBlurLastName = () => {
+        const isValidLastName = this.validateLastName();
 
-        this.setState({showFirstNameError: !isValiidFirstName})
+        this.setState({ showLastNameError: !isValidLastName });
     }
+
 
     onChangeFirstName = event => {
         const {target} = event
